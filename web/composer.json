@@ -1,0 +1,13 @@
+{
+  "require": {
+
+  },
+  "autoload":{
+       "psr-4":{
+             "SomeName\\": "."
+       }
+  },
+  "config": {
+    "optimize-autoloader": true
+  }
+}
