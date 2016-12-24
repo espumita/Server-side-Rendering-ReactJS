@@ -5,3 +5,6 @@ use SomeName\Example\ExampleClass;
 
 $message = (new ExampleClass())->hiFromComposer();
 echo $message;
+
+
+phpinfo();
