@@ -44,8 +44,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends curl
 COPY src/ /var/www/html/
 COPY composer.json /var/www/html/
 COPY config/php.ini /usr/local/etc/php/
+COPY package.json /var/www/html/
+COPY ReactJS.php /var/www/html/
 
 WORKDIR /var/www/html/
+RUN mkdir ./build
+
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - \
+    && apt-get install -y nodejs build-essential \
+    && npm install && npm run make
 
 RUN composer install --no-interaction \
     && composer update
